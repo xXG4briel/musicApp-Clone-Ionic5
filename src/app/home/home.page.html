@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-row >
+      <ion-col size="12" class="ion-no-padding">
+        <ion-title class="ion-no-padding ion-no-margin">MUSICA APP</ion-title>
+        <img src="https://avatars.githubusercontent.com/u/62632117?v=4">
+      </ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content color="primary">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  
+  <ion-item class="ion-no-padding welcome-bar" lines="0" color="primary">
+    <div>
+      <h4>Gabriel George</h4>
+      <h6>Boa noite!</h6>
+    </div>
+  </ion-item>
+
+  <!-- Playlist de musicas -->
+  <ion-slides class="ion-no-margin ion-no-padding playlist-slider" [options]="slideOpts">
+    <ion-slide *ngFor="let playlist of playlists">
+      <ion-card class="ion-text-start ion-no-margin">
+        <img src="{{ playlist.foto }}">
+        <ion-label class="ion-no-padding">{{ playlist.nome }}</ion-label>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

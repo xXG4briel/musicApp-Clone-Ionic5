@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="ion-padding-start">
     <ion-row >
       <ion-col size="12" class="ion-no-padding">
-        <ion-title class="ion-no-padding ion-no-margin">MUSICA APP</ion-title>
+        <ion-title class="ion-no-padding ion-no-margin">Musica App</ion-title>
         <img src="https://avatars.githubusercontent.com/u/62632117?v=4">
       </ion-col>
     </ion-row>
@@ -12,15 +12,15 @@
 <ion-content color="primary">
 
   
-  <ion-item class="ion-no-padding welcome-bar" lines="0" color="primary">
+  <ion-item class="ion-no-padding ion-padding-start welcome-bar" lines="0" color="primary">
     <div>
       <h4>Gabriel George</h4>
       <h6>Boa noite!</h6>
     </div>
   </ion-item>
 
-  <!-- Playlist de musicas -->
-  <ion-slides class="ion-no-margin ion-no-padding playlist-slider" [options]="slideOpts">
+  <!-- Playlist -->
+  <ion-slides class="ion-no-margin ion-no-padding ion-padding-start playlist-slider" [options]="slideOpts">
     <ion-slide *ngFor="let playlist of playlists">
       <ion-card class="ion-text-start ion-no-margin">
         <img src="{{ playlist.foto }}">
@@ -30,10 +30,27 @@
   </ion-slides>
 
 
+  <!-- Musicas -->
+  <div class="music-card">
+    <ion-label>Awesome Label</ion-label>
+    <ion-item *ngFor="let music of musics" class="ion-no-padding" color="primary" detail>
+      <img src="{{ music.foto }}" alt="Musica">
+      <div>
+        <h3>{{ music.titulo }}</h3>
+        <h5>{{ music.descricao }}</h5>
+      </div>
+    </ion-item>
+  </div>
+
 </ion-content>
 
 <ion-footer>
   <ion-toolbar color="primary">
-    <ion-title>Footer</ion-title>
+    <div>
+      <ion-icon name="play-circle-outline"></ion-icon>
+      <ion-icon name="medal-outline"></ion-icon>
+      <ion-icon name="mic-outline"></ion-icon>
+      <ion-icon name="people-outline"></ion-icon>
+    </div>
   </ion-toolbar>
 </ion-footer>
